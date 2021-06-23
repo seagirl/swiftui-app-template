@@ -10,10 +10,10 @@ import Foundation
 final class Store<State, Action, Environment>: ObservableObject {
 	@Published var state: State
 
-	private let reducer: ((State, Action, Environment) async -> (State, Action?))
+	private let reducer: ((State, Action, Environment) async -> (State?, Action?))
 	private let environment: Environment
 
-	init (state: State, reducer: @escaping ((State, Action, Environment) async -> (State, Action?)), environment: Environment) {
+	init (state: State, reducer: @escaping ((State, Action, Environment) async -> (State?, Action?)), environment: Environment) {
 		self.state = state
 		self.reducer = reducer
 		self.environment = environment
@@ -26,8 +26,10 @@ final class Store<State, Action, Environment>: ObservableObject {
 				self.send(action: action)
 			}
 
-			DispatchQueue.main.async { [weak self] in
-				self?.state = newState
+			if let state = newState {
+				DispatchQueue.main.async { [weak self] in
+					self?.state = state
+				}
 			}
 		}
 	}

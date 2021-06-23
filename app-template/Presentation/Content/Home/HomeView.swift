@@ -26,27 +26,26 @@ enum HomeCore {
 		let getBuildNumberInteractor: GetBuildNumberUsecase
 	}
 
-	static let reducer = { (state: State, action: Action, environment: Environment) async -> (State, Action?) in
-		var newState = state
-		var nextAction: Action? = nil
-
+	static let reducer = { (state: State, action: Action, environment: Environment) async -> (State?, Action?) in
+		var state = state
 		switch action {
 		case .load:
-			newState.isLoading = true
-			nextAction = .getBuildNumber
+			state.isLoading = true
+			return (state, .getBuildNumber)
 		case .getBuildNumber:
 			let buildNumber = await environment.getBuildNumberInteractor.execute(.init())
-			nextAction = .didLoad(buildNumber)
+			return (nil, .didLoad(buildNumber))
 		case .didLoad(let buildNumber):
-			newState.buildNumber = buildNumber
-			newState.isLoading = false
+			state.buildNumber = buildNumber
+			state.isLoading = false
+			return (state, nil)
 		case .incrementCounter:
-			newState.count += 1
+			state.count += 1
+			return (state, nil)
 		case .decrementCounter:
-			newState.count -= 1
+			state.count -= 1
+			return (state, nil)
 		}
-
-		return (newState, nextAction)
 	}
 }
 
