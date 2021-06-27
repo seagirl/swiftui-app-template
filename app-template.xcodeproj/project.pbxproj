@@ -15,6 +15,7 @@
 		A57B99182682AC62001B651A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B99172682AC62001B651A /* SettingView.swift */; };
 		A57B99222682D1F4001B651A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B99212682D1F4001B651A /* Store.swift */; };
 		A57B99262682DAA4001B651A /* GetBuildNumberInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B99252682DAA4001B651A /* GetBuildNumberInteractor.swift */; };
+		A57B992826893E74001B651A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B992726893E74001B651A /* Effect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A57B99172682AC62001B651A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		A57B99212682D1F4001B651A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A57B99252682DAA4001B651A /* GetBuildNumberInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBuildNumberInteractor.swift; sourceTree = "<group>"; };
+		A57B992726893E74001B651A /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				A57B99012682AB04001B651A /* RootView.swift */,
 				A57B99212682D1F4001B651A /* Store.swift */,
+				A57B992726893E74001B651A /* Effect.swift */,
 				A57B99202682AF75001B651A /* Content */,
 			);
 			path = Presentation;
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57B99162682AC43001B651A /* HomeView.swift in Sources */,
+				A57B992826893E74001B651A /* Effect.swift in Sources */,
 				A57B99042682AB04001B651A /* ContentView.swift in Sources */,
 				A57B99222682D1F4001B651A /* Store.swift in Sources */,
 				A57B99182682AC62001B651A /* SettingView.swift in Sources */,
